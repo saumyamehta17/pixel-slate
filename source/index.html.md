@@ -391,14 +391,9 @@ Not Required
 NOT REQUIRED
 ```
 
+> all wallets of outlet level and of organization level
 ### HTTP REQUEST
-
-> all wallets of outlet level
-
 `GET /api/v1/wallets?outlet_id=3`
-
-> all wallets of organization level
-
 `GET /api/v1/wallets?organization_id=3`
 
 ## Create a wallet 
