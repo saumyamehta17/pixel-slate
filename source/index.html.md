@@ -399,6 +399,7 @@ NOT REQUIRED
 
 ## Create a wallet 
 > Only for outlet/organization, loggedIn user must be manager of outlet or owner of an organization
+
 > For Outlet
 
 ```json
