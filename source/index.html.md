@@ -394,8 +394,8 @@ NOT REQUIRED
 > all wallets of outlet level and of organization level
 
 ### HTTP REQUEST
-`GET /api/v1/wallets?outlet_id=3`
-`GET /api/v1/wallets?organization_id=3`
+`GET /api/v1/wallets?outlet_id=3 OR `GET /api/v1/wallets?organization_id=3`` 
+
 
 ## Create a wallet 
 > Only for outlet/organization, loggedIn user must be manager of outlet or owner of an organization
