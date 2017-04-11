@@ -385,20 +385,20 @@ Not Required
 # Wallet
 
 ## GET wallets for an outlet
+
 ```json
 NOT REQUIRED
 ```
 
 ### HTTP REQUEST
 > all wallets of outlet level
-# GET /api/v1/wallets?outlet_id=3
+`GET /api/v1/wallets?outlet_id=3`
 
 > all wallets of organization level
-# GET /api/v1/wallets?organization_id=3
+`GET /api/v1/wallets?organization_id=3`
 
 ## Create a wallet 
 > Only for outlet/organization, loggedIn user must be manager of outlet or owner of an organization
-
 > For Outlet
 
 ```json
@@ -419,7 +419,7 @@ NOT REQUIRED
 }
 ```
 ### HTTP REQUEST
-# POST /api/v1/wallets
+`POST /api/v1/wallets`
 
 ## Update a wallet 
 > Only for outlet/organization, loggedIn user must be manager of outlet or owner of an organization
@@ -435,7 +435,7 @@ NOT REQUIRED
 ```
 
 ### HTTP REQUEST
-# PUT /api/v1/wallets/:id
+`PUT /api/v1/wallets/:id`
 
 ## Delete a wallet
 > Only for outlet/organization
@@ -444,7 +444,7 @@ NOT REQUIRED
 Not Required
 ```
 ### HTTP REQUEST
-# DELETE /api/v1/wallets/:id
+`DELETE /api/v1/wallets/:id`
 
 
 
