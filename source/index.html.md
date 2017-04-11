@@ -382,6 +382,72 @@ Not Required
 ### HTTP REQUEST
 `DELETE /api/v1/items/:item_id/customizations/:id`
 
+# Wallet
+
+## GET wallets for an outlet
+```json
+NOT REQUIRED
+```
+
+### HTTP REQUEST
+> all wallets of outlet level
+# GET /api/v1/wallets?outlet_id=3
+
+> all wallets of organization level
+# GET /api/v1/wallets?organization_id=3
+
+## Create a wallet 
+> Only for outlet/organization, loggedIn user must be manager of outlet or owner of an organization
+
+> For Outlet
+
+```json
+{"wallet": 
+  {"amount": 100},
+   "walletable_id": 3,
+   "walletable_type": "Outlet"
+}
+```
+
+> For Organization
+
+```json
+{"wallet": 
+  {"amount": 100},
+   "walletable_id": 3,
+   "walletable_type": "Organization"
+}
+```
+### HTTP REQUEST
+# POST /api/v1/wallets
+
+## Update a wallet 
+> Only for outlet/organization, loggedIn user must be manager of outlet or owner of an organization
+> Operation allowed - set/inc/dec
+> Manager/Owner can do set/inc/sec operation
+> Customer can only do inc
+> 0 - set, 1 - inc, 2 - dec
+
+```json
+{"wallet": 
+  {"amount": 100, kind: 0}
+}
+```
+
+### HTTP REQUEST
+# PUT /api/v1/wallets/:id
+
+## Delete a wallet
+> Only for outlet/organization
+
+```json
+Not Required
+```
+### HTTP REQUEST
+# DELETE /api/v1/wallets/:id
+
+
+
 
 
 
