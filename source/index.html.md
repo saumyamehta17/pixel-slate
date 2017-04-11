@@ -385,16 +385,20 @@ Not Required
 # Wallet
 
 ## GET wallets for an outlet
+> Request Format
 
 ```json
 NOT REQUIRED
 ```
 
 ### HTTP REQUEST
+
 > all wallets of outlet level
+
 `GET /api/v1/wallets?outlet_id=3`
 
 > all wallets of organization level
+
 `GET /api/v1/wallets?organization_id=3`
 
 ## Create a wallet 
