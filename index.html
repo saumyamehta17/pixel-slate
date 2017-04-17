@@ -219,7 +219,15 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id="user">User</h1>
+        <h1 id="config-api">Config Api</h1>
+
+<h2 id="get-all-config-var">get all config var</h2>
+
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">GET /api/v1/rate_card</code> // HEADERS - LANG, COUNTRY_CODE </p>
+
+<h1 id="user">User</h1>
 
 <h2 id="generate-otp-for-new-user">Generate OTP for new User</h2>
 
@@ -295,6 +303,38 @@
 <h3 id="http-request">HTTP REQUEST</h3>
 
 <p><code class="prettyprint">GET /api/v1/users/:id</code></p>
+
+<h1 id="address">Address</h1>
+
+<h2 id="create-an-address">Create an address</h2>
+<pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+               </span><span class="s2">"house"</span><span class="p">:</span><span class="w"> </span><span class="mi">230</span><span class="p">,</span><span class="w"> </span><span class="s2">"locality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Park View"</span><span class="p">,</span><span class="s2">"pincode"</span><span class="p">:</span><span class="w"> </span><span class="mi">122001</span><span class="p">,</span><span class="w"> </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HRY"</span><span class="p">,</span><span class="w"> 
+               </span><span class="s2">"landmark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Near Castle GRDN"</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="err">'GGN'</span><span class="p">,</span><span class="w"> </span><span class="err">number</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">9090909090</span><span class="err">'</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">POST /api/v1/addresses</code></p>
+
+<h2 id="update-an-address">update an address</h2>
+<pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+               </span><span class="s2">"house"</span><span class="p">:</span><span class="w"> </span><span class="mi">230</span><span class="p">,</span><span class="w"> </span><span class="s2">"locality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Park View"</span><span class="p">,</span><span class="s2">"pincode"</span><span class="p">:</span><span class="w"> </span><span class="mi">122001</span><span class="p">,</span><span class="w"> </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HRY"</span><span class="p">,</span><span class="w"> 
+               </span><span class="s2">"landmark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Near Castle GRDN"</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="err">'GGN'</span><span class="p">,</span><span class="w"> </span><span class="err">number</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">9090909090</span><span class="err">'</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">PUT /api/v1/addresses/:id</code></p>
+
+<h2 id="delete-an-address">delete an address</h2>
+
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">DELETE api/v1/addresses/:id</code></p>
 
 <h1 id="coupons">Coupons</h1>
 
