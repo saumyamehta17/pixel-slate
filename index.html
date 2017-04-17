@@ -221,6 +221,33 @@
       <div class="content">
         <h1 id="user">User</h1>
 
+<h2 id="generate-otp-for-new-user">Generate OTP for new User</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9090909090"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">POST /api/v1/otp/generate_otp</code></p>
+
+<h2 id="verify-new-user-with-otp">Verify new User with OTP</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9090909090"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1111"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">POST /api/v1/otp/verify</code></p>
+
 <h2 id="update-user-with-address-and-other-details">Update User with address and other details</h2>
 
 <blockquote>
@@ -268,6 +295,21 @@
 <h3 id="http-request">HTTP REQUEST</h3>
 
 <p><code class="prettyprint">GET /api/v1/users/:id</code></p>
+
+<h1 id="coupons">Coupons</h1>
+
+<h2 id="get-list-of-coupons-which-is-applicable-to-user">Get list of coupons which is applicable to user</h2>
+
+<blockquote>
+<p>Request Format
+<code class="prettyprint">json
+ Not required
+</code></p>
+
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">GET /api/v1/coupons?amount=1200 //amount is optional</code></p>
+</blockquote>
 
           <h1 id="errors">Errors</h1>
 
