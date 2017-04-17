@@ -309,6 +309,36 @@
 
 <p><code class="prettyprint">GET /api/v1/coupons?amount=1200</code>  //amount is optional</p>
 
+<h2 id="verify-a-coupon-on-app-shows-message-accordingly">Verify a coupon on app, shows message accordingly</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"coupon"</span><span class="p">:</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"promo_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DIW20"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">POST api/v1/coupons/verify?amount=500</code>  //amount is optional</p>
+
+<h1 id="orders">Orders</h1>
+
+<h2 id="get-all-orders">get all orders</h2>
+
+<h2 id="create-an-order">Create an order</h2>
+
+<h2 id="update-an-order">update an order</h2>
+
+<h2 id="regenerate-upload-path">regenerate upload path</h2>
+
+<h2 id="tax-calculate">tax calculate</h2>
+
+<h2 id="dummy_urls">dummy_urls</h2>
+
           <h1 id="errors">Errors</h1>
 
 <aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the `includes` folder and add them to the top of your `index.md`&lsquo;s frontmatter. Files are included in the order listed.</aside>
