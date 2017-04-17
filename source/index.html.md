@@ -19,7 +19,7 @@ search: true
 
 # User
 
-## With Referral Code / Update User with address
+##  With Referral Code / Update User with address
 > Request Format
 
 ```json
