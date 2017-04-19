@@ -51,7 +51,7 @@ search: true
 ### HTTP REQUEST
 `POST /api/v1/otp/verify`
 
-##  Update User with address and other details
+##  SignUp or register or Update User with address and other details with or without referral_code
 > Request Format
 
 ```json
@@ -75,7 +75,7 @@ search: true
 ### HTTP REQUEST
 `PUT /api/v1/users/:id`
 
-##  Only Referral
+##  Only Referral after signup
 > Request Format
 
 ```json
@@ -84,10 +84,8 @@ search: true
   }
 ```
 
-## Get successful referrals
-
 ### HTTP REQUEST
-`GET api/v1/users/referral_used`
+`POST api/v1/users/use_referral`
 
 ## GET user profile
 
@@ -134,30 +132,12 @@ search: true
 
 # Coupons
 
-## Get list of coupons which is applicable to user
-
-> Request Format
-
-```json
- Not required
-```
+## Get list of coupons which is applicable to user or coupons that earned via referrals or get coupons on amount
 
 ### HTTP REQUEST
-`GET /api/v1/coupons?amount=1200&&referral=true`  //amount/referral is optional, where referral param tells to get all coupons as a reward of referral
-
-## Verify a coupon on app, shows message accordingly
-> Request Format
-
-```json
-  {
-    "coupon":
-    {
-      "promo_code": "DIW20"
-    }
-  }
-```
-### HTTP REQUEST
-`POST api/v1/coupons/verify?amount=500`  //amount is optional
+`GET /api/v1/coupons` // Get all applicable for givem user
+`GET /api/v1/coupons?amount=1200`  //Get all coupon on given amount 
+`GET /api/v1/coupons?referral=true`  //Get all coupon that a user earned from referrals
 
 # Orders
 
@@ -169,22 +149,42 @@ search: true
 ### HTTP REQUEST
 `GET /api/v1/orders/`
 
+## Get details of before creating order
+```json
+  {
+    "order": {
+      "items":
+        [{
+        "key": "photo/small/4x6",
+        "print": 2,
+        "uuid": ["123334433sddd", "dsd433sddd", "433sddds88999"]
+        },{
+        .... similar to above .....
+        }],
+      address_id: '58a57aaa2980d33040286a54',
+      coupon: "FIRST" // Optional
+  } }
+```
+
+### HTTP REQUEST
+`POST /api/v1/orders/get_details`
+
 ## Create an order
 ```json
   {
     "order": {
       "items":
       [{
-        "size": "3 x 5",  as meteres
-        "type": "Glossy", as second
-        "print": 2,
-        "uuid": "123334433sddd"
+      "key": "photo/small/4x6",
+      "print": 2,
+      "uuid": ["123334433sddd", "dsd433sddd", "433sddds88999"]
       },{
-        .... similar to above .....
+      .... similar to above .....
       }],
-      address_id: '58a57aaa2980d33040286a54'
-    } 
-  }
+      "address_id": '58a57aaa2980d33040286a54'.
+      "gateway": "payu" or "paytm",
+      "coupon": "FIRST" // optional
+  } }
 ```
 
 ### HTTP REQUEST
@@ -201,92 +201,7 @@ search: true
 ### HTTP REQUEST
 `POST /api/v1/orders/regenerate_path`
 
-## tax calculate
-
-### HTTP REQUEST
-`GET /api/v1/orders/tax_calculate`
-
 ## dummy_urls
 
 ### HTTP REQUEST
 `GET api/v1/orders/dummy_urls?order_id`
-
-# Order V2
-
-## Order get details
-
-> Request
-
-```json
-# POST /api/v1/orders/get_details
-  {
-    "order": {
-      "items":
-    [{
-    "key": "photo/small/4x6",
-    "print": 2,
-    "uuid": ["123334433sddd", "dsd433sddd", "433sddds88999"]
-  },{
-  .... similar to above .....
-  }],
-  address_id: '58a57aaa2980d33040286a54'
-  } }
----
-```
-
-> Response
-
-```json
-{
-  "success": 1,
-  "order": {
-    "_id": "58f6ff682980d3150cf5dbd8",
-    "address_id": "58f48c922980d36073e483cf",
-    "base_amount": 320,
-    "c_at": null,
-    "delivery_date": "2017-04-21T06:10:48.365+00:00",
-    "gateway": "payu",
-    "net_amount": 368,
-    "sessions": [
-      {
-        "_id": "58f6ff682980d3150cf5dbda",
-        "amount": 60,
-        "key": "photo/small/4x6",
-        "print": 2,
-        "uuid": [
-          "123334433sddd",
-          "dsd433sddd",
-          "433sddds88999"
-        ]
-      },
-      {
-        "_id": "58f6ff682980d3150cf5dbdc",
-        "amount": 50,
-        "key": "photo/small/3.5x5",
-        "print": 2,
-        "uuid": [
-          "123334433sdd2",
-          "dsd413sddd",
-          "233sddds88999"
-        ]
-      }
-    ],
-    "shipping_charge": 100,
-    "status": "order_open",
-    "t_hash": null,
-    "tax": {
-      "_id": "58f6ff682980d3150cf5dbdd",
-      "c_at": null,
-      "service_tax": 48,
-      "total": 48,
-      "vat": 0
-    },
-    "taxable_amount": 320,
-    "txn_id": "1T1EB-FXE3F-TC8R0",
-    "user_id": "58f4b53d2980d30500523488"
-  }
-}
-```
-
-### HTTP REQUEST
-`POST /api/v1/orders/get_details`
