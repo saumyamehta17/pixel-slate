@@ -264,6 +264,7 @@
 <pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SM"</span><span class="p">,</span><span class="w"> 
    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sm@pixel.com"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17-12-1989"</span><span class="p">,</span><span class="w">
    </span><span class="s2">"referral_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1E0XGE"</span><span class="p">,</span><span class="w">
    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> 
         </span><span class="p">{</span><span class="w">
@@ -417,6 +418,85 @@
 <h3 id="http-request">HTTP REQUEST</h3>
 
 <p><code class="prettyprint">GET api/v1/orders/dummy_urls?order_id</code></p>
+
+<h1 id="order-v2">Order V2</h1>
+
+<h2 id="order-get-details">Order get details</h2>
+
+<blockquote>
+<p>Request</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="err">#</span><span class="w"> </span><span class="err">POST</span><span class="w"> </span><span class="err">/api/v</span><span class="mi">1</span><span class="err">/orders/get_details</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"items"</span><span class="p">:</span><span class="w">
+    </span><span class="p">[{</span><span class="w">
+    </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"photo/small/4x6"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"print"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"uuid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"123334433sddd"</span><span class="p">,</span><span class="w"> </span><span class="s2">"dsd433sddd"</span><span class="p">,</span><span class="w"> </span><span class="s2">"433sddds88999"</span><span class="p">]</span><span class="w">
+  </span><span class="p">},{</span><span class="w">
+  </span><span class="err">....</span><span class="w"> </span><span class="err">similar</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">above</span><span class="w"> </span><span class="err">.....</span><span class="w">
+  </span><span class="p">}],</span><span class="w">
+  </span><span class="err">address_id</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">58</span><span class="err">a</span><span class="mi">57</span><span class="err">aaa</span><span class="mi">2980</span><span class="err">d</span><span class="mi">33040286</span><span class="err">a</span><span class="mi">54</span><span class="err">'</span><span class="w">
+  </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span><span class="err">---</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"58f6ff682980d3150cf5dbd8"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"address_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"58f48c922980d36073e483cf"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"base_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">320</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"c_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"delivery_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-21T06:10:48.365+00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"gateway"</span><span class="p">:</span><span class="w"> </span><span class="s2">"payu"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"net_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">368</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sessions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"58f6ff682980d3150cf5dbda"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"photo/small/4x6"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"print"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"uuid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"123334433sddd"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"dsd433sddd"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"433sddds88999"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"58f6ff682980d3150cf5dbdc"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"photo/small/3.5x5"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"print"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"uuid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="s2">"123334433sdd2"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"dsd413sddd"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"233sddds88999"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"shipping_charge"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order_open"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"t_hash"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tax"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"58f6ff682980d3150cf5dbdd"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"c_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"service_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">48</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"vat"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"taxable_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">320</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"txn_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1T1EB-FXE3F-TC8R0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"58f4b53d2980d30500523488"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">POST /api/v1/orders/get_details</code></p>
 
           <h1 id="errors">Errors</h1>
 
