@@ -211,19 +211,19 @@ search: true
 ## About Us
 
 ### HTTP REQUEST
-`GET /api/v1/home_page/tnc` // NO HEADERS NOTHIMG
+`GET /api/v1/home_page/tnc` // NO HEADERS NOTHING
 
 ## FAQS
 
 ### HTTP REQUEST
-`GET /api/v1/home_page/faqs` // NO HEADERS NOTHIMG
+`GET /api/v1/home_page/faqs` // NO HEADERS NOTHING
 
 ## Privacy Policy
 
 ### HTTP REQUEST
-`GET /api/v1/home_page/privacy_policy` // NO HEADERS NOTHIMG
+`GET /api/v1/home_page/privacy_policy` // NO HEADERS NOTHING
 
 ## Terms n Condition
 
 ### HTTP REQUEST
-`GET /api/v1/home_page/tnc` // NO HEADERS NOTHIMG
+`GET /api/v1/home_page/tnc` // NO HEADERS NOTHING
