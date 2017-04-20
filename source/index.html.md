@@ -211,7 +211,7 @@ search: true
 ## About Us
 
 ### HTTP REQUEST
-`GET /api/v1/home_page/tnc` // NO HEADERS NOTHING
+`GET /api/v1/home_page/about` // NO HEADERS NOTHING
 
 ## FAQS
 
