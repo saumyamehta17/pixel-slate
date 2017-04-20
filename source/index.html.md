@@ -205,3 +205,25 @@ search: true
 
 ### HTTP REQUEST
 `GET api/v1/orders/dummy_urls?order_id`
+
+# Static Content of Home Page
+
+## About Us
+
+### HTTP REQUEST
+`GET /api/v1/home_page/tnc` // NO HEADERS NOTHIMG
+
+## FAQS
+
+### HTTP REQUEST
+`GET /api/v1/home_page/faqs` // NO HEADERS NOTHIMG
+
+## Privacy Policy
+
+### HTTP REQUEST
+`GET /api/v1/home_page/privacy_policy` // NO HEADERS NOTHIMG
+
+## Terms n Condition
+
+### HTTP REQUEST
+`GET /api/v1/home_page/tnc` // NO HEADERS NOTHIMG
