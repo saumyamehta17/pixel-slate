@@ -211,19 +211,19 @@ search: true
 ## About Us
 
 ### HTTP REQUEST
-`GET /api/v1/home_page/about` // NO HEADERS NOTHING
+`GET /api/v1/home_page/about` // NOTE: NO HEADERS EXCEPT If-None-Match
 
 ## FAQS
 
 ### HTTP REQUEST
-`GET /api/v1/home_page/faqs` // NO HEADERS NOTHING
+`GET /api/v1/home_page/faqs` // NOTE: NO HEADERS EXCEPT If-None-Match
 
 ## Privacy Policy
 
 ### HTTP REQUEST
-`GET /api/v1/home_page/privacy_policy` // NO HEADERS NOTHING
+`GET /api/v1/home_page/privacy_policy` // NOTE: NO HEADERS EXCEPT If-None-Match
 
 ## Terms n Condition
 
 ### HTTP REQUEST
-`GET /api/v1/home_page/tnc` // NO HEADERS NOTHING
+`GET /api/v1/home_page/tnc` // NOTE: NO HEADERS EXCEPT If-None-Match
