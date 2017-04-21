@@ -139,6 +139,16 @@ search: true
 `GET /api/v1/coupons?amount=1200`  //Get all coupon on given amount 
 `GET /api/v1/coupons?referral=true`  //Get all coupon that a user earned from referrals
 
+## Verify a coupon
+```json
+  { 
+    "coupon": "FIRST"
+  }
+```
+
+### HTTP REQUEST
+`POST api/v1/coupons/verify?amount=500` // amount is optional
+
 # Orders
 
 ## get all orders

@@ -18,3 +18,15 @@ Error Code | Meaning
 429 | Too Many Requests -- You're requesting too many kittens! Slow down!
 500 | Internal Server Error -- We had a problem with our server. Try again later.
 503 | Service Unavailable -- We're temporarily offline for maintenance. Please try again later.
+
+# Headers
+
+<aside class="notice">
+	Base Api call
+</aside>
+
+Header      | Value
+----------- | -------
+USER_ID		| LoggedIn user id
+AUTH_TOKEN	| LoggedIn user token
+Content-Type| 'application/json'
