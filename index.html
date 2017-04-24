@@ -296,14 +296,22 @@
 
 <h2 id="get-user-profile">GET user profile</h2>
 
-<blockquote>
-<p>Request Format</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="w"> </span><span class="err">NOT</span><span class="w"> </span><span class="err">REQUIRED</span><span class="w">
-</span></code></pre>
 <h3 id="http-request">HTTP REQUEST</h3>
 
 <p><code class="prettyprint">GET /api/v1/users/:id</code></p>
+
+<h2 id="update-users-phone-number">Update user&rsquo;s phone number</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+   </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9711941112"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">GET api/v1/users/update_number</code></p>
 
 <h1 id="address">Address</h1>
 
@@ -343,7 +351,7 @@
 
 <h3 id="http-request">HTTP REQUEST</h3>
 
-<p><code class="prettyprint">GET /api/v1/coupons</code> // Get all applicable for givem user
+<p><code class="prettyprint">GET /api/v1/coupons</code> // Get all applicable for given user
 <code class="prettyprint">GET /api/v1/coupons?amount=1200</code>  //Get all coupon on given amount 
 <code class="prettyprint">GET /api/v1/coupons?referral=true</code>  //Get all coupon that a user earned from referrals</p>
 
