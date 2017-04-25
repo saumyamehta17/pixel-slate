@@ -413,14 +413,18 @@
 <p><code class="prettyprint">POST /api/v1/orders</code></p>
 
 <h2 id="regenerate-upload-path">regenerate upload path</h2>
-<pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"589aaad68f92d20a4433ea78"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"uuids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"123334433sddd"</span><span class="p">,</span><span class="w"> </span><span class="s2">""</span><span class="p">]</span><span class="w">
- </span><span class="p">}</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="s2">"order"</span><span class="p">:</span><span class="w"> 
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"58ff0edc2980d3513517408a"</span><span class="p">,</span><span class="w"> </span><span class="s2">"uuid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"123334433sddd"</span><span class="p">,</span><span class="w"> </span><span class="s2">"sdsfsff"</span><span class="p">]},</span><span class="w">
+                </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"58ff0edc2980d3513517408c"</span><span class="p">,</span><span class="w"> </span><span class="s2">"uuid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"123334433sddd"</span><span class="p">,</span><span class="w"> </span><span class="s2">"sdsfsff"</span><span class="p">]}</span><span class="w">
+               </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <h3 id="http-request">HTTP REQUEST</h3>
 
-<p><code class="prettyprint">POST /api/v1/orders/regenerate_path</code></p>
+<p><code class="prettyprint">POST /api/v1/orders/:id/regenerate_path</code></p>
 
 <h2 id="dummy_urls">dummy_urls</h2>
 
