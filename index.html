@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Documentation</title>
+    <title>API Reference</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -197,7 +197,7 @@
     </style>
     <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all_nosearch.js"></script>
+      <script src="javascripts/all.js"></script>
   </head>
 
   <body class="index" data-languages="[]">
@@ -209,19 +209,205 @@
     </a>
     <div class="tocify-wrapper">
       <img src="images/logo.png" alt="Logo" />
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
       <div id="toc">
       </div>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <p>. similar to above &hellip;..
-}],
-address_id: &lsquo;58a57aaa2980d33040286a54&rsquo;,
-coupon: &ldquo;FIRST&rdquo;
-} }
-&ldquo;`</p>
+        <h1 id="config-api">Config Api</h1>
 
+<h2 id="get-all-config-var">get all config var</h2>
+
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">GET /api/v1/rate_card</code> // HEADERS - LANG, COUNTRY_CODE </p>
+
+<h1 id="user">User</h1>
+
+<h2 id="generate-otp-for-new-user">Generate OTP for new User</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9090909090"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">POST /api/v1/otp/generate_otp</code></p>
+
+<h2 id="verify-new-user-with-otp">Verify new User with OTP</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9090909090"</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1111"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">POST /api/v1/otp/verify</code></p>
+
+<h2 id="signup-or-register-or-update-user-with-address-and-other-details-with-or-without-referral_code">SignUp or register or Update User with address and other details with or without referral_code</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+   </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SM"</span><span class="p">,</span><span class="w"> 
+   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sm@pixel.com"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"17-12-1989"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"referral_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1E0XGE"</span><span class="p">,</span><span class="w">
+   </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> 
+        </span><span class="p">{</span><span class="w">
+         </span><span class="s2">"pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"122001"</span><span class="p">,</span><span class="w"> 
+         </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HRY"</span><span class="p">,</span><span class="w"> 
+         </span><span class="s2">"house"</span><span class="p">:</span><span class="w"> </span><span class="mi">230</span><span class="p">,</span><span class="w"> 
+         </span><span class="s2">"locality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Park View"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GGN"</span><span class="p">,</span><span class="w"> 
+         </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11111111"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">PUT /api/v1/users/:id</code></p>
+
+<h2 id="only-referral-after-signup">Only Referral after signup</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"referral_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1E0XGE"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">POST api/v1/users/use_referral</code></p>
+
+<h2 id="get-user-profile">GET user profile</h2>
+
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">GET /api/v1/users/:id</code></p>
+
+<h2 id="update-users-phone-number">Update user&rsquo;s phone number</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+   </span><span class="s2">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9711941112"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">GET api/v1/users/update_number</code></p>
+
+<h1 id="address">Address</h1>
+
+<h2 id="create-an-address">Create an address</h2>
+<pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+               </span><span class="s2">"house"</span><span class="p">:</span><span class="w"> </span><span class="mi">230</span><span class="p">,</span><span class="w"> </span><span class="s2">"locality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Park View"</span><span class="p">,</span><span class="s2">"pincode"</span><span class="p">:</span><span class="w"> </span><span class="mi">122001</span><span class="p">,</span><span class="w"> </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HRY"</span><span class="p">,</span><span class="w"> 
+               </span><span class="s2">"landmark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Near Castle GRDN"</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="err">'GGN'</span><span class="p">,</span><span class="w"> </span><span class="err">number</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">9090909090</span><span class="err">'</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">POST /api/v1/addresses</code></p>
+
+<h2 id="update-an-address">update an address</h2>
+<pre class="highlight json tab-json"><code><span class="w"> </span><span class="p">{</span><span class="w">
+   </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+               </span><span class="s2">"house"</span><span class="p">:</span><span class="w"> </span><span class="mi">230</span><span class="p">,</span><span class="w"> </span><span class="s2">"locality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Park View"</span><span class="p">,</span><span class="s2">"pincode"</span><span class="p">:</span><span class="w"> </span><span class="mi">122001</span><span class="p">,</span><span class="w"> </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HRY"</span><span class="p">,</span><span class="w"> 
+               </span><span class="s2">"landmark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Near Castle GRDN"</span><span class="p">,</span><span class="w"> </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="err">'GGN'</span><span class="p">,</span><span class="w"> </span><span class="err">number</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">9090909090</span><span class="err">'</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+ </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">PUT /api/v1/addresses/:id</code></p>
+
+<h2 id="delete-an-address">delete an address</h2>
+
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">DELETE api/v1/addresses/:id</code></p>
+
+<h1 id="coupons">Coupons</h1>
+
+<h2 id="get-list-of-coupons-which-is-applicable-to-user-or-coupons-that-earned-via-referrals-or-get-coupons-on-amount">Get list of coupons which is applicable to user or coupons that earned via referrals or get coupons on amount</h2>
+
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">GET /api/v1/coupons</code> // Get all applicable for given user
+<code class="prettyprint">GET /api/v1/coupons?amount=1200</code>  //Get all coupon on given amount 
+<code class="prettyprint">GET /api/v1/coupons?referral=true</code>  //Get all coupon that a user earned from referrals</p>
+
+<h2 id="verify-a-coupon">Verify a coupon</h2>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w"> 
+    </span><span class="s2">"coupon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FIRST"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">POST api/v1/coupons/verify?amount=500</code> // amount is optional</p>
+
+<h1 id="orders">Orders</h1>
+
+<h2 id="get-all-orders">get all orders</h2>
+<pre class="highlight json tab-json"><code><span class="w"> </span><span class="err">NOT</span><span class="w"> </span><span class="err">REQUIRED</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">GET /api/v1/orders/</code></p>
+
+<h2 id="get-details-of-before-creating-order">Get details of before creating order</h2>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"items"</span><span class="p">:</span><span class="w">
+        </span><span class="p">[{</span><span class="w">
+        </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"photo/small/4x6"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"print"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"uuid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"123334433sddd"</span><span class="p">,</span><span class="w"> </span><span class="s2">"dsd433sddd"</span><span class="p">,</span><span class="w"> </span><span class="s2">"433sddds88999"</span><span class="p">]</span><span class="w">
+        </span><span class="p">},{</span><span class="w">
+        </span><span class="err">....</span><span class="w"> </span><span class="err">similar</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">above</span><span class="w"> </span><span class="err">.....</span><span class="w">
+        </span><span class="p">}],</span><span class="w">
+      </span><span class="err">address_id</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">58</span><span class="err">a</span><span class="mi">57</span><span class="err">aaa</span><span class="mi">2980</span><span class="err">d</span><span class="mi">33040286</span><span class="err">a</span><span class="mi">54</span><span class="err">'</span><span class="p">,</span><span class="w">
+      </span><span class="err">coupon</span><span class="p">:</span><span class="w"> </span><span class="s2">"FIRST"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
+  </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">POST /api/v1/orders/get_details</code></p>
+
+<h2 id="create-an-order">Create an order</h2>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"items"</span><span class="p">:</span><span class="w">
+      </span><span class="p">[{</span><span class="w">
+      </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"photo/small/4x6"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"print"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"uuid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"123334433sddd"</span><span class="p">,</span><span class="w"> </span><span class="s2">"dsd433sddd"</span><span class="p">,</span><span class="w"> </span><span class="s2">"433sddds88999"</span><span class="p">]</span><span class="w">
+      </span><span class="p">},{</span><span class="w">
+      </span><span class="err">....</span><span class="w"> </span><span class="err">similar</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">above</span><span class="w"> </span><span class="err">.....</span><span class="w">
+      </span><span class="p">}],</span><span class="w">
+      </span><span class="s2">"address_id"</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">58</span><span class="err">a</span><span class="mi">57</span><span class="err">aaa</span><span class="mi">2980</span><span class="err">d</span><span class="mi">33040286</span><span class="err">a</span><span class="mi">54</span><span class="err">'.</span><span class="w">
+      </span><span class="s2">"gateway"</span><span class="p">:</span><span class="w"> </span><span class="s2">"payu"</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="s2">"paytm"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"coupon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FIRST"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">optional</span><span class="w">
+  </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></code></pre>
 <h3 id="http-request">HTTP REQUEST</h3>
 
 <p><code class="prettyprint">POST /api/v1/orders</code></p>
@@ -258,15 +444,77 @@ coupon: &ldquo;FIRST&rdquo;
 
 <p><code class="prettyprint">GET /api/v1/home_page/tnc</code> // NOTE: NO HEADERS EXCEPT If-None-Match</p>
 
-<h2 id="item">Item</h2>
+          <h1 id="errors">Errors</h1>
 
-<blockquote>
-<p>regenrate url</p>
-</blockquote>
+<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the `includes` folder and add them to the top of your `index.md`&lsquo;s frontmatter. Files are included in the order listed.</aside>
 
-<h3 id="http-request">HTTP REQUEST</h3>
+<p>The Kittn API uses the following error codes:</p>
 
-<p><code class="prettyprint">PUT api/v1/items/:id</code></p>
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request &ndash; Your request sucks</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized &ndash; Your API key is wrong</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Unverified Params</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found &ndash; The specified kitten could not be found</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone &ndash; The kitten requested has been removed from our servers</td>
+</tr>
+<tr>
+<td>412</td>
+<td>Operation Failure</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable &ndash; We&rsquo;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+<h1 id="headers">Headers</h1>
+
+<aside class="notice">
+    Base Api call
+</aside>
+
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>USER_ID</td>
+<td>LoggedIn user id</td>
+</tr>
+<tr>
+<td>AUTH_TOKEN</td>
+<td>LoggedIn user token</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>&#39;application/json&rsquo;</td>
+</tr>
+</tbody></table>
 
       </div>
       <div class="dark-box">
