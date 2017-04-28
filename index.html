@@ -375,18 +375,21 @@
 
 <h2 id="get-details-of-before-creating-order">Get details of before creating order</h2>
 <pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"items"</span><span class="p">:</span><span class="w">
-        </span><span class="p">[{</span><span class="w">
-        </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"photo/small/4x6"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"print"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"uuid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"123334433sddd"</span><span class="p">,</span><span class="w"> </span><span class="s2">"dsd433sddd"</span><span class="p">,</span><span class="w"> </span><span class="s2">"433sddds88999"</span><span class="p">]</span><span class="w">
-        </span><span class="p">},{</span><span class="w">
-        </span><span class="err">....</span><span class="w"> </span><span class="err">similar</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">above</span><span class="w"> </span><span class="err">.....</span><span class="w">
-        </span><span class="p">}],</span><span class="w">
-      </span><span class="err">address_id</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">58</span><span class="err">a</span><span class="mi">57</span><span class="err">aaa</span><span class="mi">2980</span><span class="err">d</span><span class="mi">33040286</span><span class="err">a</span><span class="mi">54</span><span class="err">'</span><span class="p">,</span><span class="w">
-      </span><span class="err">coupon</span><span class="p">:</span><span class="w"> </span><span class="s2">"FIRST"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Optional</span><span class="w">
-  </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
+          </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"sessions"</span><span class="p">:</span><span class="w">
+              </span><span class="p">[{</span><span class="w">
+                </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"photo/small/4x6"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"print"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"compositions"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                  </span><span class="s2">"print"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                  </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="err">whatever.....</span><span class="p">}]</span><span class="w">
+                 </span><span class="p">}]</span><span class="w">
+              </span><span class="p">},{</span><span class="w">
+              </span><span class="err">....</span><span class="w"> </span><span class="err">similar</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">above</span><span class="w"> </span><span class="err">.....</span><span class="w">
+              </span><span class="p">}],</span><span class="w">
+        </span><span class="err">address_id</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">58</span><span class="err">a</span><span class="mi">57</span><span class="err">aaa</span><span class="mi">2980</span><span class="err">d</span><span class="mi">33040286</span><span class="err">a</span><span class="mi">54</span><span class="err">'</span><span class="p">,</span><span class="w">
+        </span><span class="err">coupon</span><span class="p">:</span><span class="w"> </span><span class="s2">"FIRST"</span><span class="w">
+      </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <h3 id="http-request">HTTP REQUEST</h3>
 
@@ -394,19 +397,22 @@
 
 <h2 id="create-an-order">Create an order</h2>
 <pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"items"</span><span class="p">:</span><span class="w">
-      </span><span class="p">[{</span><span class="w">
-      </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"photo/small/4x6"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"print"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"uuid"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"123334433sddd"</span><span class="p">,</span><span class="w"> </span><span class="s2">"dsd433sddd"</span><span class="p">,</span><span class="w"> </span><span class="s2">"433sddds88999"</span><span class="p">]</span><span class="w">
-      </span><span class="p">},{</span><span class="w">
-      </span><span class="err">....</span><span class="w"> </span><span class="err">similar</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">above</span><span class="w"> </span><span class="err">.....</span><span class="w">
-      </span><span class="p">}],</span><span class="w">
-      </span><span class="s2">"address_id"</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">58</span><span class="err">a</span><span class="mi">57</span><span class="err">aaa</span><span class="mi">2980</span><span class="err">d</span><span class="mi">33040286</span><span class="err">a</span><span class="mi">54</span><span class="err">'.</span><span class="w">
-      </span><span class="s2">"gateway"</span><span class="p">:</span><span class="w"> </span><span class="s2">"payu"</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="s2">"paytm"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"coupon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FIRST"</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">optional</span><span class="w">
-  </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
+          </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"sessions"</span><span class="p">:</span><span class="w">
+                  </span><span class="p">[{</span><span class="w">
+                       </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"photo/small/4x6"</span><span class="p">,</span><span class="w">
+                       </span><span class="s2">"print"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                       </span><span class="s2">"compositions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                           </span><span class="s2">"print"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                           </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="err">whatever.....</span><span class="p">}]</span><span class="w">
+                       </span><span class="p">}</span><span class="w">
+                   </span><span class="p">},{</span><span class="w">
+                       </span><span class="err">....</span><span class="w"> </span><span class="err">similar</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">above</span><span class="w"> </span><span class="err">.....</span><span class="w">
+                   </span><span class="p">}],</span><span class="w">
+        </span><span class="s2">"address_id"</span><span class="p">:</span><span class="w"> </span><span class="err">'</span><span class="mi">58</span><span class="err">a</span><span class="mi">57</span><span class="err">aaa</span><span class="mi">2980</span><span class="err">d</span><span class="mi">33040286</span><span class="err">a</span><span class="mi">54</span><span class="err">'.</span><span class="w">
+        </span><span class="s2">"gateway"</span><span class="p">:</span><span class="w"> </span><span class="s2">"payu"</span><span class="w"> </span><span class="err">or</span><span class="w"> </span><span class="s2">"paytm"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"coupon"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FIRST"</span><span class="w">
+      </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <h3 id="http-request">HTTP REQUEST</h3>
 
