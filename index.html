@@ -313,6 +313,24 @@
 
 <p><code class="prettyprint">GET api/v1/users/update_number</code></p>
 
+<h2 id="invite-users">Invite Users</h2>
+
+<blockquote>
+<p>Request Format
+<code class="prettyprint">json
+    {&quot;user&quot;: 
+      [
+        {&quot;phone&quot;: [&quot;9090909090&quot;], &quot;name&quot;: &quot;SM&quot;, &quot;email&quot;: [&quot;sm@appstreet.io&quot;]},
+        {&quot;phone&quot;: [&quot;9090909090&quot;, &quot;9090909091&quot;], &quot;name&quot;: &quot;MS&quot;, email&quot;:[&quot;ms@appstreet.io&quot;, &quot;ms@gmail.com&quot;]} 
+      ]
+    }
+</code></p>
+</blockquote>
+
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">POST api/v1/users/invites</code></p>
+
 <h1 id="address">Address</h1>
 
 <h2 id="create-an-address">Create an address</h2>
