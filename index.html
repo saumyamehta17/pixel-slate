@@ -380,9 +380,23 @@
 
 <p><code class="prettyprint">POST api/v1/coupons/verify?amount=500</code> // amount is optional</p>
 
+<h1 id="regerate-url">Regerate URL</h1>
+
+<h2 id="update-items-or-regenerate-url">Update Items OR regenerate URL</h2>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="err">NOT</span><span class="w"> </span><span class="err">REQUIRED</span><span class="w">
+
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">PUT /api/v1/items/:id</code></p>
+
 <h1 id="orders">Orders</h1>
 
-<h2 id="get-all-orders">get all orders</h2>
+<blockquote>
+<p>get orders with pagination..by default it will fetch first page of 20 orders&hellip;</p>
+</blockquote>
+
+<h2 id="get-all-orders-page-1">get all orders?page=1</h2>
 <pre class="highlight json tab-json"><code><span class="w"> </span><span class="err">NOT</span><span class="w"> </span><span class="err">REQUIRED</span><span class="w">
 </span></code></pre>
 <h3 id="http-request">HTTP REQUEST</h3>
