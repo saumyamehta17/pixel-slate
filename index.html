@@ -392,16 +392,27 @@
 
 <h1 id="orders">Orders</h1>
 
+<h2 id="get-all-orders-page-1">get all orders?page=1</h2>
+
 <blockquote>
 <p>get orders with pagination..by default it will fetch first page of 20 orders&hellip;</p>
 </blockquote>
-
-<h2 id="get-all-orders-page-1">get all orders?page=1</h2>
 <pre class="highlight json tab-json"><code><span class="w"> </span><span class="err">NOT</span><span class="w"> </span><span class="err">REQUIRED</span><span class="w">
 </span></code></pre>
 <h3 id="http-request">HTTP REQUEST</h3>
 
 <p><code class="prettyprint">GET /api/v1/orders/</code></p>
+
+<h2 id="get-all-orders-as-admin">get all orders as admin</h2>
+
+<blockquote>
+<p>For Admin - get orders with pagination..by default it will fetch first page of 20 orders&hellip;NOTE: Use username and password as basic auth to get orders</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w"> </span><span class="err">NOT</span><span class="w"> </span><span class="err">REQUIRED</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">GET /api/v1/orders/get_as_admin?page=1</code></p>
 
 <h2 id="get-details-of-before-creating-order">Get details of before creating order</h2>
 <pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
