@@ -279,19 +279,20 @@
 </span></code></pre>
 <h3 id="http-request">HTTP REQUEST</h3>
 
-<p><code class="prettyprint">POST /api/v1/otp/verify</code></p>
+<p><code class="prettyprint">POST /api/v1/verify_email</code></p>
 
 <h2 id="signup-after-verification">SignUp after verification</h2>
 
 <blockquote>
 <p>Request Format</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SM"</span><span class="p">,</span><span class="w"> 
    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sm@appstreet.io"</span><span class="p">,</span><span class="w">
    </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
    </span><span class="s2">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
-  </span><span class="p">}</span><span class="w"> 
+   </span><span class="p">}</span><span class="w"> 
+  </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <h3 id="http-request">HTTP REQUEST</h3>
 
@@ -302,16 +303,71 @@
 <blockquote>
 <p>Request Format</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="s2">"user"</span><span class="p">:</span><span class="w"> 
-    </span><span class="p">{</span><span class="w">
-     </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sm@appstreet.io"</span><span class="p">,</span><span class="w"> 
-     </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"whatever"</span><span class="w">
-     </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w"> 
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+   </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sm@appstreet.io"</span><span class="p">,</span><span class="w"> 
+   </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"whatever"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <h3 id="http-request">HTTP REQUEST</h3>
 
 <p><code class="prettyprint">POST /api/v1/users/sign_in</code></p>
+
+<h2 id="set-password-if-user-verified-and-password-needs-to-set">set password if user verified and password needs to set</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="s2">"user"</span><span class="p">:{</span><span class="w">
+    </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123467"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="s2">"sm@gmail.com"</span><span class="w">
+  </span><span class="p">}}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">POST /api/v1/users/verified</code></p>
+
+<h2 id="forgot-password">Forgot Password</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="err">'email@example.com'</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">POST /api/v1/users/forgot_pwd</code></p>
+
+<h2 id="change-password-with-code-getting-from-mail">Change Password with code getting from mail</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="err">'email@example.com'</span><span class="p">,</span><span class="w">
+  </span><span class="err">code</span><span class="p">:</span><span class="w"> </span><span class="s2">"wefew"</span><span class="p">,</span><span class="w">
+  </span><span class="err">password</span><span class="p">:</span><span class="w"> </span><span class="s2">"ee2fe2"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">POST /api/v1/users/change_pwd</code></p>
+
+<h2 id="change-password-by-providing-old-password">Change Password by providing old password</h2>
+
+<blockquote>
+<p>Request Format</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="err">'email@example.com'</span><span class="p">,</span><span class="w">
+  </span><span class="err">old_password</span><span class="p">:</span><span class="w"> </span><span class="s2">"wefew"</span><span class="p">,</span><span class="w">
+  </span><span class="err">new_password</span><span class="p">:</span><span class="w"> </span><span class="s2">"ee2fe2"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="http-request">HTTP REQUEST</h3>
+
+<p><code class="prettyprint">POST /api/v1/users/update_pwd</code></p>
 
 <h2 id="update-user">Update user</h2>
 
